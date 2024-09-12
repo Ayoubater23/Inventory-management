@@ -40,7 +40,8 @@ const App = () => {
     };
     const deleteItem = async (id) => {
         await axios.delete(`http://localhost:8000/api/${id}`);
-        setItems(items.filter((item, i) => item.id !== id));
+        setItems(items.filter((item) => item.id !== id));
+        console.log("hey")
     }
     return (
         <div className="app">

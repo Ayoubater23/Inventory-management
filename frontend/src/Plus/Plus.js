@@ -1,9 +1,9 @@
 import React from 'react'
-import { v4 as uuidv4 } from 'uuid';
 
 const Plus = (props) => {
 
 const [item,setItem] = React.useState({
+    id:"",
     name: "",
     type: "",
     description: "",
@@ -21,8 +21,7 @@ const [item,setItem] = React.useState({
     }
     const handleSubmit = (event) => {
         event.preventDefault()
-        const itemWithId = { ...item, id: uuidv4() };
-        props.onAddItem(itemWithId);
+        props.onAddItem(item);
         console.log(item);
         alert('Formulaire soumis avec succès !')
         setItem({
