@@ -13,4 +13,5 @@ public interface ItemDao {
     public boolean existsByNameAndType(String name, String type);
     public boolean isValidDimensionFormat(String dimension);
     public boolean isValidDateFormat(String date);
+
 }

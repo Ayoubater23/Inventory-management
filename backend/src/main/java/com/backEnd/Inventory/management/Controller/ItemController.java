@@ -3,6 +3,7 @@ package com.backEnd.Inventory.management.Controller;
 import com.backEnd.Inventory.management.Model.Item;
 import com.backEnd.Inventory.management.RegistrationRequest.ItemRegistrationRequest;
 import com.backEnd.Inventory.management.Service.ItemService;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class ItemController {
         return itemService.getItemById(id);
     }
     @PostMapping
-    public void addItem(@RequestBody ItemRegistrationRequest item) {
+    public void addItem(@Valid @RequestBody ItemRegistrationRequest item) {
         itemService.addItem(item);
     }
     @DeleteMapping("/{id}")

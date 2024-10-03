@@ -32,6 +32,20 @@ public class ItemService {
             throw new DuplicateResources("Dimension must be in the format 'l*l*e'");
         } else if (!itemDao.isValidDateFormat(request.date())) {
             throw new DuplicateResources("Date must be in the format 'yyyy-MM-dd");
+        } else if (request.name().isEmpty()) {
+            throw new ResourceNotFound("name should not be empty");
+        }else if (request.type().isEmpty()) {
+            throw new ResourceNotFound("type should not be empty");
+        }else if (request.dimension().isEmpty()) {
+            throw new ResourceNotFound("dimension should not be empty");
+        }else if (request.description().isEmpty()) {
+            throw new ResourceNotFound("description should not be empty");
+        }else if (request.price()==0) {
+            throw new ResourceNotFound("price should not be empty");
+        }else if (request.date().isEmpty()) {
+            throw new ResourceNotFound("date should not be empty");
+        }else if (request.quantity()==0) {
+            throw new ResourceNotFound("quantity should not be empty");
         }
         Item item = new Item(request.name(),
                 request.type(),

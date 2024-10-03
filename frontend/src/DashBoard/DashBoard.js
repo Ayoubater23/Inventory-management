@@ -1,7 +1,6 @@
 import React from 'react'
 import img5 from './../images/Icon-box.png';
 import img1 from './../images/Icon-list.png';
-import img2 from './../images/Icon-search.png';
 
 
 const DashBoard = (props) => {

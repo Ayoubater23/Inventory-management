@@ -3,10 +3,7 @@ package com.backEnd.Inventory.management.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.DecimalMax;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.PastOrPresent;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 @Entity
 
@@ -22,24 +19,30 @@ public class Item {
     private int id;
     @Column(nullable = false)
     @Size(max = 50)
+    @NotEmpty(message = "name should not be empty")
     private String name;
     @Size(max = 50)
     @Column(nullable = false)
+    @NotEmpty(message = "type should not be empty")
     private String type;
+    @NotEmpty(message = "dimension should not be empty")
 
     @Column(nullable = false)
     private String dimension;
+    @NotEmpty(message = "description should not be empty")
     @Column(nullable = false)
     private String description;
+    @NotEmpty(message = "price should not be empty")
     @Column(nullable = false)
     @DecimalMax(value = "10000.00")
     private float price;
     @Column(nullable = false)
-
+    @NotEmpty(message = "date should not be empty")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private String date;
     @Max(value = 1000)
     @Column(nullable = false)
+    @NotEmpty(message = "quantity should not be empty")
     private int quantity;
 
     public Item(int id, String name, String type, String dimension, String description, float price, String date, int quantity) {

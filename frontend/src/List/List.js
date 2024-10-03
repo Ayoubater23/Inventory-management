@@ -4,11 +4,9 @@ import trash from "../images/trash.png";
 
 
 const List = (props) => {
-    console.log(props.items)
     const [visibility, setVisibility] = React.useState(true)
     const toggleVisibility = ()=> {
         setVisibility(prevState => !prevState)
-        console.log(visibility)
     }
 
     return (
@@ -28,9 +26,9 @@ const List = (props) => {
                     <table>
                         <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Nom</th>
                             <th>Type</th>
-                            <th>Quantity</th>
+                            <th>Quantité</th>
                             <th>Dimension</th>
                             <th>Prix</th>
                             <th>Date</th>
